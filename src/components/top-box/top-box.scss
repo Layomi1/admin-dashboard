@@ -1,42 +1,42 @@
-@import "../../styles/variables.scss";
+.top-box {
+  h1 {
+    margin-bottom: 20px;
+  }
 
-h1 {
-  margin-bottom: 20px;
-}
-
-.list {
-  .list-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    .user {
+  .list {
+    .list-item {
       display: flex;
       align-items: center;
-      gap: 15px;
-
-      img {
-        width: 40px;
-        height: 40px;
-        border-radius: 60%;
-        object-fit: cover;
-      }
-      .user-texts {
+      justify-content: space-between;
+      margin-bottom: 30px;
+      .user {
         display: flex;
-        flex-direction: column;
-        .username {
-          margin-bottom: 5px;
-          font-size: 14px;
-          font-weight: 500;
-          white-space: nowrap;
+        align-items: center;
+        gap: 15px;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 60%;
+          object-fit: cover;
         }
-        .email {
-          font-size: 12px;
+        .user-texts {
+          display: flex;
+          flex-direction: column;
+          .username {
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+          }
+          .email {
+            font-size: 12px;
+          }
         }
       }
-    }
-    .email {
-      font-weight: 500;
+      .email {
+        font-weight: 500;
+      }
     }
   }
 }

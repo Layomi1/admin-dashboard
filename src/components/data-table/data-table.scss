@@ -1,0 +1,30 @@
+.data-table {
+  width: 92%;
+  .data-grid {
+    background: white;
+    padding: 20px;
+
+    .css-pb0mfc-MuiDataGrid-toolbar-MuiDataGrid-toolbarContainer {
+      flex-direction: row-reverse;
+    }
+    img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  .action {
+    display: flex;
+    gap: 15px;
+    img {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+    button {
+      background: transparent;
+      border: none;
+    }
+  }
+}
