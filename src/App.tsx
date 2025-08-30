@@ -1,3 +1,5 @@
+import "./styles/global.scss";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
@@ -5,8 +7,8 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Products from "./pages/products/Products";
 import Users from "./pages/users/Users";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
-import "./styles/global.scss";
+import User from "./pages/user/User";
+import Product from "./pages/product/Product";
 
 const Layout = () => {
   return (
@@ -32,19 +34,24 @@ function App() {
       element: <Layout />,
       children: [
         {
-          path: "/",
-          Component: Home,
-          // loader: loadRootData,
+          index: true,
+          element: <Home />,
         },
         {
           path: "users",
-          Component: Users,
-          // loader: loadRootData,
+          element: <Users />,
         },
         {
           path: "products",
-          Component: Products,
-          // loader: loadRootData,
+          element: <Products />,
+        },
+        {
+          path: "users/:id",
+          element: <User />,
+        },
+        {
+          path: "products/:id",
+          element: <Product />,
         },
       ],
     },

@@ -1,3 +1,13 @@
 .products {
-  background-color: yellow;
+  .info-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  }
 }
