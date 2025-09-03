@@ -9,6 +9,9 @@ import Products from "./pages/products/Products";
 import Users from "./pages/users/Users";
 import User from "./pages/user/User";
 import Product from "./pages/product/Product";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 const Layout = () => {
   return (
@@ -19,7 +22,9 @@ const Layout = () => {
           <Sidebar />
         </div>
         <div className="content-container">
-          <Outlet />
+          <QueryClientProvider client={queryClient}>
+            <Outlet />
+          </QueryClientProvider>
         </div>
       </div>
       <Footer />
