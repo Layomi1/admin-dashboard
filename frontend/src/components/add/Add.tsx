@@ -48,14 +48,13 @@ const Add = (props: Props) => {
     e.preventDefault();
     const newData = {
       ...formData,
-      id: Date.now(), // regenerate ID for uniqueness
+      id: Date.now(),
     };
 
     mutation.mutate(newData, {
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: [`all${props.slug}s`] });
         props.setOpen(false);
-        console.log("form submitted: ", newData);
       },
     });
   };

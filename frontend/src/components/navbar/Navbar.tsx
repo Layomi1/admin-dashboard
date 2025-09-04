@@ -14,9 +14,9 @@ const Navbar = () => {
         <span>Iamadmin</span>
       </div>
       <div className="icons">
-        <img src={searchIcon} alt="search" />
-        <img src={appIcon} alt="app icon" />
-        <img src={expandIcon} alt="expand" />
+        <img src={searchIcon} alt="search" className="icon" />
+        <img src={appIcon} alt="app icon" className="icon" />
+        <img src={expandIcon} alt="expand" className="icon" />
         <div className="notification">
           <img src={notification} alt="notification" />
           <span>1</span>
