@@ -60,10 +60,10 @@ const Products = () => {
   const { isLoading, data } = useQuery({
     queryKey: ["allproducts"],
     queryFn: () => {
-      return fetch("https://localhost:8800/api/products").then((res) =>
+      console.log("data: ", data);
+      return fetch("http://localhost:8800/api/products").then((res) =>
         res.json()
       );
-      console.log("data: ", data);
     },
   });
 
@@ -76,7 +76,7 @@ const Products = () => {
       {isLoading ? (
         <div>...Loading</div>
       ) : (
-        <DataTable slug="products" columns={columns} rows={data} />
+        <DataTable slug="products" columns={columns} rows={data || []} />
       )}
 
       {open && <Add slug="product" columns={columns} setOpen={setOpen} />}

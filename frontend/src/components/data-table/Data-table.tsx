@@ -50,7 +50,7 @@ const DataTable = (props: Props) => {
       <DataGrid
         className="data-grid"
         rows={props.rows}
-        getRowId={(row) => row.email}
+        getRowId={(row) => row.email || row.id}
         columns={[...props.columns, actionColumn]}
         initialState={{
           pagination: {
