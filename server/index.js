@@ -265,8 +265,12 @@ app.get("/api/users/:id", (req, res) => {
 
 // ADD USER
 app.post("/api/users", (req, res) => {
-  users.unshift(req.body);
-  res.json(users);
+  const newUser = {
+    id: users.length ? users[users.length - 1].id + 1 : 1,
+    ...req.body,
+  };
+  users.unshift(newUser);
+  res.json(newUser);
 });
 
 // DELETE USER
@@ -290,8 +294,13 @@ app.get("/api/products/:id", (req, res) => {
 
 // ADD PRODUCT
 app.post("/api/products", (req, res) => {
-  products.unshift(req.body);
-  res.json(products);
+  const newProduct = {
+    id: products.length ? products[products.length - 1].id + 1 : 1,
+    ...req.body,
+  };
+  users.unshift(newProduct);
+
+  res.json(newProduct);
 });
 
 // DELETE PRODUCT

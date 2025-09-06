@@ -9,6 +9,8 @@ type Props = {
 const Add = (props: Props) => {
   const handleSubmit = (e: React.FocusEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("item added: ");
+    props.setOpen(false);
   };
   return (
     <div className="add">

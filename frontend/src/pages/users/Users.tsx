@@ -1,10 +1,10 @@
-import { useState } from "react";
-import DataTable from "../../components/data-table/Data-table";
-import { userRows } from "../../data";
 import "./users.scss";
+import { useEffect, useState } from "react";
+import DataTable from "../../components/data-table/Data-table";
 
 import { GridColDef } from "@mui/x-data-grid";
 import Add from "../../components/add/Add";
+import API_BASE_URL from "../../config.ts";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
@@ -56,13 +56,21 @@ const columns: GridColDef[] = [
 
 const Users = () => {
   const [open, setOpen] = useState(false);
+  const [rows, setRows] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/api/users`)
+      .then((res) => res.json())
+      .then((data) => setRows(data));
+  }, []);
+
   return (
     <div className="users">
       <div className="info-container">
         <h1>Users</h1>
         <button onClick={() => setOpen(true)}>Add new User</button>
       </div>
-      <DataTable slug="users" columns={columns} rows={userRows} />
+      <DataTable slug="users" columns={columns} rows={rows} />
       {open && <Add slug="user" columns={columns} setOpen={setOpen} />}
     </div>
   );
