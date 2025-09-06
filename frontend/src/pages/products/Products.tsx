@@ -5,6 +5,7 @@ import DataTable from "../../components/data-table/Data-table";
 
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import API_BASE_URL from "../../config.ts";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
@@ -61,9 +62,7 @@ const Products = () => {
     queryKey: ["allproducts"],
     queryFn: () => {
       console.log("data: ", data);
-      return fetch("http://localhost:8800/api/products").then((res) =>
-        res.json()
-      );
+      return fetch(`${API_BASE_URL}/products`).then((res) => res.json());
     },
   });
 

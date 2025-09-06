@@ -5,6 +5,7 @@ import { GridColDef } from "@mui/x-data-grid";
 import DataTable from "../../components/data-table/Data-table";
 
 import Add from "../../components/add/Add";
+import API_BASE_URL from "../../config.ts";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
@@ -59,8 +60,7 @@ const Users = () => {
 
   const { isLoading, data } = useQuery({
     queryKey: ["allusers"],
-    queryFn: () =>
-      fetch("http://localhost:8800/api/users").then((res) => res.json()),
+    queryFn: () => fetch(`${API_BASE_URL}/users`).then((res) => res.json()),
   });
 
   return (

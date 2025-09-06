@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./data-table.scss";
 import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import API_BASE_URL from "../../config.ts";
 
 type Props = {
   columns: GridColDef[];
@@ -14,7 +15,7 @@ const DataTable = (props: Props) => {
 
   const mutation = useMutation({
     mutationFn: (id: number | string) => {
-      return fetch(`http://localhost:8800/api/${props.slug}/${id}`, {
+      return fetch(`${API_BASE_URL}/${props.slug}/${id}`, {
         method: "DELETE",
       });
     },

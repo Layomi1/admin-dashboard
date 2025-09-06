@@ -302,6 +302,4 @@ app.delete("/api/products/:id", (req, res) => {
   res.json("Product deleted!");
 });
 
-app.listen(8800, () => {
-  console.log("Connected to backend.");
-});
+export default app;
