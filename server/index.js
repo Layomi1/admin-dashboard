@@ -302,4 +302,10 @@ app.delete("/api/products/:id", (req, res) => {
   res.json("Product deleted!");
 });
 
+if (process.env.NODE_ENV !== "production") {
+  app.listen(8800, () => {
+    console.log("Backend running on http://localhost:8800");
+  });
+}
+
 export default app;
