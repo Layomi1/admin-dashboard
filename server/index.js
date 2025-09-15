@@ -302,6 +302,8 @@ app.delete("/api/products/:id", (req, res) => {
   res.json("Product deleted!");
 });
 
-app.listen(8800, () => {
-  console.log("Connected to backend.");
+const PORT = process.env.PORT || 8800;
+
+app.listen(PORT, () => {
+  console.log(`Backend running on port ${PORT}`);
 });
