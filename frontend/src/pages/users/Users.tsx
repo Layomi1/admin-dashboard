@@ -4,7 +4,7 @@ import DataTable from "../../components/data-table/Data-table";
 
 import { GridColDef } from "@mui/x-data-grid";
 import Add from "../../components/add/Add";
-import API_BASE_URL from "../../config.ts";
+import API_BASE_URL from "../../config";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
