@@ -1,6 +1,5 @@
-import express from "express";
-import cors from "cors";
-
+const express = require("express");
+const cors = require("cors");
 const app = express();
 
 app.use(cors());
@@ -298,7 +297,7 @@ app.post("/api/products", (req, res) => {
     id: products.length ? products[products.length - 1].id + 1 : 1,
     ...req.body,
   };
-  users.unshift(newProduct);
+  products.unshift(newProduct);
 
   res.json(newProduct);
 });
@@ -313,7 +312,8 @@ app.delete("/api/products/:id", (req, res) => {
 
 const PORT = process.env.PORT || 8800;
 
-// app.listen(PORT, () => {
-//   console.log(`Backend running on port ${PORT}`);
-// });
-export default app;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+module.exports = app;

@@ -1,4 +1,6 @@
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:8800/api";
+  import.meta.env.NODE_ENV === "production"
+    ? import.meta.env.VITE_API_URL_PROD
+    : import.meta.env.VITE_API_URL || "http://localhost:8800/api";
 
 export default API_BASE_URL;

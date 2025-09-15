@@ -59,7 +59,7 @@ const Users = () => {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/users`)
+    fetch(`${API_BASE_URL}/users`)
       .then((res) => res.json())
       .then((data) => setRows(data));
   }, []);
