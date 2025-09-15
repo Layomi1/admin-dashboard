@@ -313,6 +313,7 @@ app.delete("/api/products/:id", (req, res) => {
 
 const PORT = process.env.PORT || 8800;
 
-app.listen(PORT, () => {
-  console.log(`Backend running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Backend running on port ${PORT}`);
+// });
+export default app;
