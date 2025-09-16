@@ -1,6 +1,5 @@
-const API_BASE_URL =
-  import.meta.env.NODE_ENV === "production"
-    ? import.meta.env.VITE_API_URL_PROD
-    : import.meta.env.VITE_API_URL || "http://localhost:8800/api";
+const API_BASE_URL = import.meta.env.DEV
+  ? "http://localhost:8800/api"
+  : "https://admin-dashboard-1e43hf2d3-layomis-projects.vercel.app/api";
 
 export default API_BASE_URL;
