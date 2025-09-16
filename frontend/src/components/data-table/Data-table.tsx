@@ -9,7 +9,9 @@ type Props = {
 };
 
 const DataTable = (props: Props) => {
-  const handleDelete = (id: number) => {};
+  const handleDelete = (id: number) => {
+    console.log("Deleting row with id:", id);
+  };
 
   const actionColumn: GridColDef = {
     field: "action",
